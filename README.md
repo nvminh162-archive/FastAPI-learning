@@ -1,4 +1,4 @@
-# book-management
+# Book management
 
 python -m venv venv
 

@@ -8,7 +8,7 @@ from alembic import context
 import sys
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parents[1] # folder contain alembic
+BASE_DIR = Path(__file__).resolve().parents[1] # folder contain alembic.intersection(y)
 sys.path.append(str(BASE_DIR))
 
 from app.core.config import settings

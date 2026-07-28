@@ -7,6 +7,10 @@ from alembic import context
 #========================================
 import sys
 from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parents[1] # folder contain alembic
+sys.path.append(str(BASE_DIR))
+
 from app.core.config import settings
 from app.db.base import Base # metadata contain all models
 #========================================

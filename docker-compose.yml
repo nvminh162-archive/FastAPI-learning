@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: fastapi-learning-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: fastapi_books
+      MYSQL_USER: fastapi_user
+      MYSQL_PASSWORD: fastapi_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "33067:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mysql_data:
